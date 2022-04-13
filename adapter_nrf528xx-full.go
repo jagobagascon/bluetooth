@@ -6,10 +6,6 @@ package bluetooth
 // both central and peripheral mode. This includes S132 and S140.
 
 /*
-// Define SoftDevice functions as regular function declarations (not inline
-// static functions).
-#define SVCALL_AS_NORMAL_FUNCTION
-
 #include "nrf_sdm.h"
 #include "nrf_nvic.h"
 #include "ble.h"
