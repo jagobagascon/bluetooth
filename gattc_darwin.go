@@ -173,6 +173,11 @@ func (c DeviceCharacteristic) EnableNotifications(callback func(buf []byte)) err
 	return nil
 }
 
+// RequestMTU returns the maximum write value length for the peripheral.
+func (c DeviceCharacteristic) RequestMTU(withRsp bool) int {
+	return c.service.device.prph.MaximumWriteValueLength(withRsp)
+}
+
 // Read reads the current characteristic value.
 func (c *deviceCharacteristic) Read(data []byte) (n int, err error) {
 	c.readChan = make(chan error)
